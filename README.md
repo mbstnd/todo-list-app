@@ -33,7 +33,7 @@ Esta aplicación es un gestor de tareas (ToDo List) desarrollado en **Ionic** qu
   ```bash
   npm install -g @ionic/cli
 
-  ### Pasos para instalar
+### Pasos para instalar
 
 1. **Clona este repositorio**:
    ```bash
@@ -41,3 +41,7 @@ Esta aplicación es un gestor de tareas (ToDo List) desarrollado en **Ionic** qu
 2.  **Accede al directorio del proyecto**:
    ```bash
    cd todo-list-app
+```
+3. **Instala las dependencias**:
+   ```bash
+   npm install
