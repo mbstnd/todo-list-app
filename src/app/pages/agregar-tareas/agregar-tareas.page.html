@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Agregar Tarea</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card *ngIf="photo">
+    <ion-img [src]="photo"></ion-img>
+  </ion-card>
+
+  <ion-card *ngIf="location">
+    <ion-card-header>
+      <ion-card-title>Ubicación</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Latitud: {{ location.latitude }}</p>
+      <p>Longitud: {{ location.longitude }}</p>
+      <p>Dirección: {{ address }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- FORMULARIO DE CREACIÓN DE TAREA -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Crear nueva tarea</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <ion-item>
+          <ion-label position="floating">Título</ion-label>
+          <ion-input [(ngModel)]="taskTitle" name="title" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Descripción</ion-label>
+          <ion-textarea [(ngModel)]="taskDescription" name="description" required></ion-textarea>
+        </ion-item>
+
+        <ion-button expand="full" type="submit" [disabled]="form.invalid">Agregar</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block"  (click)="capturePhoto()">Tomar Foto y Obtener Ubicación</ion-button><br />
+
+</ion-content>
+
